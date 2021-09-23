@@ -13,7 +13,7 @@
 
     <ul>
         {% for hero in all_heroes %}
-        <li><h2>{{hero.name}}</h2><a href="{% url 'superheroes:detail' hero.id %}">Details</a></li>
+        <li><h2>{{hero.name}}</h2><a href="{% url 'superheroes:detail' hero.id %}">Details</a><a href="{% url 'superheroes:edit' hero.id %}">Edit</a></li>
         {% endfor %}
     </ul>
 </body>

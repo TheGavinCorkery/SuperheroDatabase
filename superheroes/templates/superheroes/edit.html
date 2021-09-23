@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Editing hero: {{single_hero.name}}</h1>
+    <h3><a href="{% url 'superheroes:index' %}">Back to home page</a></h3>
     <form action="{% url 'superheroes:edit' single_hero.id %}" method = "post">
         {% csrf_token %}
         Name: <input type="text" name = "name" id = "name" value = "{{single_hero.name}}"><br>
