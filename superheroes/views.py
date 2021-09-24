@@ -52,5 +52,7 @@ def edit(request, hero_id):
         }
         return render(request, 'superheroes/edit.html', context)
 
-def delete(request):
-    pass
+def delete(request, hero_id):
+    delete_hero = Superhero.objects.get(pk = hero_id)
+    delete_hero.delete()
+    return HttpResponseRedirect(reverse('superheroes:index'))

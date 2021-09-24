@@ -18,5 +18,7 @@
     <h2>Primary Ability: {{single_hero.primary_ability}}</h2>
     <h2>Secondary Ability: {{single_hero.secondary_ability}}</h2>
     <h2>Catchphrase: {{single_hero.catch_phrase}}</h2>
+
+    <h2><a href="{% url 'superheroes:delete' single_hero.id %}">Delete this hero</a></h2>
 </body>
 </html>
