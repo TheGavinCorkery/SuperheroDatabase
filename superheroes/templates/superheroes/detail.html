@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details of Superhero</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'superheroes/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Detail Page</h1>
 
-    <ul>
-        <li><a href="{% url 'superheroes:index' %}">Back to home page</a></li>
-    </ul>
+    <header>
+        <div class = "row">
+            <div class = "col-md-6">
+                <h1>League of Superheroes</h1>
+            </div>
+            <div class = "col-md-6">
+                <a href = "{% url 'superheroes:index' %}" class="btn btn-success" >Home</a>
+            </div>
+        </div>
+    </header>
+
+    <h1>Detail Page</h1>
 
     <h2>Name: {{single_hero.name}}</h2>
     <h2>Alter Ego: {{single_hero.alter_ego}}</h2>
