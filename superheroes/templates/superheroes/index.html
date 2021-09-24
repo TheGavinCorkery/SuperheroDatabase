@@ -17,34 +17,40 @@
             </div>
             <div class = "col-md-6">
                 <a href = "{% url 'superheroes:index' %}" class="btn btn-success" >Home</a>
+                <a href="{% url 'superheroes:create' %}" class = "btn btn-danger">Create new hero!</a>
             </div>
         </div>
     </header>
-
-    <h1>List of Heroes</h1>
-
-    <h2>Create a new hero: <a href="{% url 'superheroes:create' %}">Here!</a></h2>
+    <div class="row">
+        <div class = "col-md-6">
+            <h1>List of Heroes</h1>
+        </div>
+        
+    </div>
+    
 
     <ul>
+        <div class="hero_list">
         {% for hero in all_heroes %}
-
-        <div class="card"  style="width: 18rem;">
-            {% if hero.name == 'Spider-Man' %}
-                <img src = "{% static 'superheroes/Spiderman_picture.png' %}" alt="Picture of spiderman">
-                
-            {% elif hero.name == 'Batman' %}
-                <img src="{% static 'superheroes/Batman_picture.png' %}" class="card-img-top" alt="Picture of batman">
-            {% elif hero.name == 'Wonder Woman' %}   
-                <img src = "{% static 'superheroes/Wonderwoman_picture.png' %}" alt="Picture of Wonder Woman">
-            {% elif hero.name == 'Superman' %}
-                <img src = "{% static 'superheroes/Superman_picture.png' %}" alt="Picture of Superman">
-            {% endif %}
-            <div class="card-body">
-              <h5 class="card-title">{{hero.name}}</h5>
-              <a href="{% url 'superheroes:detail' hero.id %}" class="btn btn-primary">Details</a>
-              <a href="{% url 'superheroes:edit' hero.id %}" class="btn btn-primary">Edit</a>
+           
+                <div class="card"  style="width: 18rem;">
+                    {% if hero.name == 'Spider-Man' %}
+                        <img src = "{% static 'superheroes/Spiderman_picture.png' %}" alt="Picture of spiderman">
+                        
+                    {% elif hero.name == 'Batman' %}
+                        <img src="{% static 'superheroes/Batman_picture.png' %}" class="card-img-top" alt="Picture of batman">
+                    {% elif hero.name == 'Wonder Woman' %}   
+                        <img src = "{% static 'superheroes/Wonderwoman_picture.png' %}" alt="Picture of Wonder Woman">
+                    {% elif hero.name == 'Superman' %}
+                        <img src = "{% static 'superheroes/Superman_picture.png' %}" alt="Picture of Superman">
+                    {% endif %}
+                    <div class="card-body">
+                    <h5 class="card-title">{{hero.name}}</h5>
+                    <a href="{% url 'superheroes:detail' hero.id %}" class="btn btn-primary">Details</a>
+                    <a href="{% url 'superheroes:edit' hero.id %}" class="btn btn-primary">Edit</a>
+                    </div>
+                </div>
             </div>
-          </div>
 
         <!-- <li><h2>{{hero.name}}</h2><a href="{% url 'superheroes:detail' hero.id %}">Details</a><a href="{% url 'superheroes:edit' hero.id %}">Edit</a></li> -->
         {% endfor %}
